@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/august-festival/fig-eclair/issues"
   },
-  "homepage": "https://github.com/august-festival/boiled-egg#readme",
+  "homepage": "https://github.com/august-festival/fig-eclair#readme",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
