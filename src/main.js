@@ -18,24 +18,12 @@ Vue.prototype.$http = axios
 Vue.prototype.$ = jquery
 Vue.config.productionTip = false
 
-// 전역 이벤트 버스
-export const eventBus = new Vue()
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  store,
-  components: {App},
-  template: '<App/>'
-})
-
 /**
  * 전역 로그
  * @param obj toString할 객체
  * @param option 옵션 'toString' -> 내부 출력
  */
-window.JSLog = function (obj, option) {
+Vue.prototype.JSLog = function (obj, option) {
   if (option === 'toString') {
     let log = ''
     let objs = []
@@ -53,13 +41,25 @@ window.JSLog = function (obj, option) {
         })
       }
     }
-    JSLog(log)
+    this.JSLog(log)
     objs.forEach(function (v) {
-      JSLog('-> ' + v.name)
-      JSLog('to', v.o)
+      this.JSLog('-> ' + v.name)
+      this.JSLog('to', v.o)
     })
   } else {
     let args = Array.prototype.slice.call(arguments)
     if (window.console) console.log('JSLog: ' + args.join(' | '))
   }
 }
+
+// 전역 이벤트 버스
+export const eventBus = new Vue()
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  store,
+  components: {App},
+  template: '<App/>'
+})
