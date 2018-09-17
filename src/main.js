@@ -15,7 +15,7 @@ library.add(faCoffee)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(BootstrapVue)
 Vue.prototype.$http = axios
-Vue.prototype.$ = jquery
+Vue.prototype.jquery = jquery
 Vue.config.productionTip = false
 
 /**
