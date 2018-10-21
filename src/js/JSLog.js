@@ -7,24 +7,26 @@
 window.JSLog = function (option, ...list) {
   if (option === 'to') {
     list.forEach(obj => {
-      let log = '', objs = [], i = 0
+      let log = ''
+      let objs = []
+      let i = 0
       for (let prop in obj) {
         if (i !== 0) {
           log += 'JSLog: '
         }
         i++
         log += `${prop} : ${obj[prop]} \n`
-        if (typeof(obj[prop]) === 'object') {
+        if (typeof obj[prop] === 'object') {
           objs.push({
             name: prop,
             o: obj[prop]
-          });
+          })
         }
       }
-      JSLog(log)
+      window.JSLog(log)
       objs.forEach(function (v) {
-        JSLog(`-> ${v.name}`)
-        JSLog('to', v.o)
+        window.JSLog(`-> ${v.name}`)
+        window.JSLog('to', v.o)
       })
     })
   } else {
