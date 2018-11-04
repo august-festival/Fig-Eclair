@@ -9,12 +9,12 @@ window.JSLog = function (option, ...list) {
     list.forEach(obj => {
       let log = ''
       let objs = []
-      let i = 0
+      let isFirst = false
       for (let prop in obj) {
-        if (i !== 0) {
+        if (isFirst) {
           log += 'JSLog: '
         }
-        i++
+        isFirst = true
         log += `${prop} : ${obj[prop]} \n`
         if (typeof obj[prop] === 'object') {
           objs.push({
