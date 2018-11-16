@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/page/Login'
+import {Login, Signup }from '@/page/Login/index'
 import Error from '@/page/Error'
 
 Vue.use(Router)
@@ -11,8 +11,14 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
-    },
+      component: Login,      
+    },    
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup,      
+    },    
+
     {
       path: '*',
       name: 'Error',
