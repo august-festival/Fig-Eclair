@@ -1,5 +1,5 @@
 <template lang="pug">
-    #home_workspace
+    #team_workspace
         #menu
             menu-top
         #content_workspace
@@ -14,7 +14,7 @@
     import BoxCard from '@/components/BoxCard'
 
     export default {
-        name: 'Home',
+        name: "Team",
         components: {
             MenuTop,
             MenuSub,
@@ -23,34 +23,32 @@
         data() {
             return {
                 subMenus: [
-                    'All',
-                    'MY',
                     'TEAM',
                     'NEW'
                 ],
                 list: [
                     {
-                        title: '테스트1',
+                        title: '테스트팀1',
                         content: '내용1'
                     },
                     {
-                        title: '테스트2',
+                        title: '테스트팀2',
                         content: '내용2'
                     },
                     {
-                        title: '테스트3',
+                        title: '테스트팀3',
                         content: '내용4'
                     },
                     {
-                        title: '테스트5',
+                        title: '테스트팀5',
                         content: '내용5'
                     },
                     {
-                        title: '테스트6',
+                        title: '테스트팀6',
                         content: '내용7'
                     },
                     {
-                        title: '테스트8',
+                        title: '테스트팀8',
                         content: '내용9'
                     }
                 ]
@@ -60,7 +58,7 @@
 </script>
 
 <style lang="scss" scoped>
-    #home_workspace {
+    #team_workspace {
         #menu {
             width: 100%;
             background-color: darkturquoise;
@@ -79,4 +77,3 @@
         }
     }
 </style>
-

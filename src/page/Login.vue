@@ -11,9 +11,9 @@
 </template>
 
 <script>
-export default {
-    name: 'Login'
-}
+    export default {
+        name: 'Login'
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -26,7 +26,7 @@ export default {
         padding: 40px;
         background: rgba(0, 0, 0, .8);
         box-sizing: border-box;
-        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
         border-radius: 10px;
 
         h2 {
