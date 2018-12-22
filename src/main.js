@@ -5,14 +5,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import BootstrapVue from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faCoffee)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.use(BootstrapVue)
 // 기본 HTTP 설정
 Vue.prototype.$http = axios.create({
   headers: {token: store.state.token}
