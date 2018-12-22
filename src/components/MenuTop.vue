@@ -1,5 +1,5 @@
 <template lang="pug">
-    #menu_top
+    #menu_top(:class="isMargin ? '' : 'none_margin'")
         #menu(class="btn-group" role="group")
             router-link(v-for="(menu, index) in menus" :key="menu.id" :to="menu.href")
                 button(class="btn btn-dark" :class="active === index ? 'on' : ''") {{ menu.name }}
@@ -11,6 +11,10 @@
         props:{
             active: {
                 type: Number
+            },
+            isMargin: {
+                type: Boolean,
+                default: true
             }
         },
         data() {
@@ -59,6 +63,10 @@
                 background-color: #23272b;
                 border-color: #1d2124;
             }
+        }
+
+        &.none_margin {
+            margin-bottom: 0;
         }
     }
 </style>
