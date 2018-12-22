@@ -13,7 +13,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faCoffee)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(BootstrapVue)
-Vue.prototype.$http = axios
+// 기본 HTTP 설정
+Vue.prototype.$http = axios.create({
+  headers: {token: store.state.token}
+})
 Vue.config.productionTip = false
 
 // 전역 이벤트 버스
