@@ -1,13 +1,18 @@
 <template lang="pug">
     #menu_top
         #menu(class="btn-group" role="group")
-            router-link(v-for="menu of menus" :key="menu.id" :to="menu.href")
-                button(class="btn btn-dark") {{ menu.name }}
+            router-link(v-for="(menu, index) in menus" :key="menu.id" :to="menu.href")
+                button(class="btn btn-dark" :class="active === index ? 'on' : ''") {{ menu.name }}
 </template>
 
 <script>
     export default {
         name: 'MenuTop',
+        props:{
+            active: {
+                type: Number
+            }
+        },
         data() {
             return {
                 menus: [
@@ -47,6 +52,12 @@
         #menu {
             button {
                 border-radius: 0;
+            }
+
+            .on {
+                color: #fff;
+                background-color: #23272b;
+                border-color: #1d2124;
             }
         }
     }

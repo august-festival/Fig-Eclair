@@ -1,6 +1,6 @@
 <template lang="pug">
     #setting_workspace
-        menu-top
+        menu-top(:active="2")
         #content_workspace
             span 셋팅페이지
 </template>

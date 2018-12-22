@@ -1,6 +1,6 @@
 <template lang="pug">
     #team_workspace
-        menu-top
+        menu-top(:active="1")
         #content_workspace
             menu-sub(:menus="subMenus")
             box-card(:list="list")
