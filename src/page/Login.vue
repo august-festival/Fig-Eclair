@@ -1,13 +1,19 @@
 <template lang="pug">
     #login_workspace
         h2 Login
-        .input_box
-            input(type="text" required)
-            label email
-        .input_box
-            input(type="password" required)
-            label password
-        button(class="btn btn-primary") 로그인
+
+        div
+            a(class="login-btn btn btn-primary" href="/api/v1/auth/facebook")
+                | 페이스북으로 로그인
+        div
+            a(class="login-btn btn btn-success" href="/api/v1/auth/naver")
+                | 네이버로 로그인
+        div
+            a(class="login-btn btn btn-warning" href="/api/v1/auth/kakao")
+                | 카카오로 로그인
+        div
+            a(class="login-btn btn btn-danger" href="/api/v1/auth/google")
+                | 구글로 로그인
 </template>
 
 <script>
@@ -69,6 +75,13 @@
                 pointer-events: none;
                 transition: .5s;
             }
+
+        }
+        a.login-btn.btn {
+            color: #fff;
+            margin: 2px 5px;
+            width: 160px;
+            text-align: left;
         }
     }
 </style>
