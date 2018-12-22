@@ -1,8 +1,10 @@
 <template lang="pug">
     #box_card
-        .card(v-for="vo of list")
-            h2 {{ vo.title }}
-            span {{ vo.content }}
+        .card(class="text-white bg-dark mb-3" v-for="vo of list")
+            .card-header header
+            .card-body
+                h5.card-title {{ vo.title }}
+                p.card-text {{ vo.content }}
 </template>
 
 <script>
@@ -23,7 +25,6 @@
     #box_card {
         .card {
             display: inline-block;
-            box-sizing: border-box;
             width: 200px;
             height: 200px;
             margin-right: 15px;

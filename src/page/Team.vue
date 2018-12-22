@@ -1,10 +1,8 @@
 <template lang="pug">
     #team_workspace
-        #menu
-            menu-top
+        menu-top
         #content_workspace
-            #menu_sub
-                menu-sub(:menus="subMenus")
+            menu-sub(:menus="subMenus")
             box-card(:list="list")
 </template>
 
@@ -59,21 +57,10 @@
 
 <style lang="scss" scoped>
     #team_workspace {
-        #menu {
-            width: 100%;
-            background-color: darkturquoise;
-            overflow: hidden;
-            margin-bottom: 50px;
-        }
-
         #content_workspace {
             margin: 0 auto;
             width: 1080px;
             text-align: center;
-        }
-
-        #menu_sub {
-            margin-bottom: 20px;
         }
     }
 </style>

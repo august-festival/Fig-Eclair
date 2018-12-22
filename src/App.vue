@@ -22,6 +22,7 @@ export default {
     body {
         font-family: 'Noto Sans', sans-serif;
         line-height: 1;
+        background-color: #282828;
     }
 
     h1, h2, h3, h4, h5, h6 {

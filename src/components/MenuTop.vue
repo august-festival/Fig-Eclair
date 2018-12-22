@@ -1,7 +1,8 @@
 <template lang="pug">
-    #menu_top(class="btn-group" role="group")
-        button(class="btn btn-light" v-for="menu of menus")
-            router-link(:to="menu.href") {{ menu.name }}
+    #menu_top
+        #menu(class="btn-group" role="group")
+            router-link(v-for="menu of menus" :key="menu.id" :to="menu.href")
+                button(class="btn btn-dark") {{ menu.name }}
 </template>
 
 <script>
@@ -39,6 +40,14 @@
 
 <style lang="scss" scoped>
     #menu_top {
-        float: left;
+        width: 100%;
+        background-color: #424242;
+        margin-bottom: 50px;
+
+        #menu {
+            button {
+                border-radius: 0;
+            }
+        }
     }
 </style>

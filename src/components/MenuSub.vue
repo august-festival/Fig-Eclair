@@ -1,6 +1,6 @@
 <template lang="pug">
     #menu_sub(class="btn-group" role="group")
-        button(class="btn btn-light" v-for="menu of menus") {{ menu }}
+        button(class="btn btn-dark" v-for="menu of menus") {{ menu }}
 </template>
 
 <script>
@@ -19,6 +19,6 @@
 
 <style lang="scss" scoped>
     #menu_sub {
-
+        margin-bottom: 20px;
     }
 </style>
