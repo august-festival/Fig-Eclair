@@ -2,21 +2,25 @@
     #home_workspace
         menu-top(:active="0")
         #content_workspace
-            menu-sub(:menus="subMenus")
+            menu-sub(:menus="subMenus" @new="getModal")
             box-card(:list="list")
+
+        modal-create(title="보드 생성" @add="create")
 </template>
 
 <script>
     import MenuTop from '@/components/MenuTop'
     import MenuSub from '@/components/MenuSub'
     import BoxCard from '@/components/BoxCard'
+    import ModalCreate from '@/components/ModalCreate'
 
     export default {
         name: 'Home',
         components: {
             MenuTop,
             MenuSub,
-            BoxCard
+            BoxCard,
+            ModalCreate
         },
         data() {
             return {
@@ -52,6 +56,16 @@
                         content: '내용9'
                     }
                 ]
+            }
+        },
+        methods: {
+            // modal 호출
+            getModal() {
+                $('#modal_create_workspace').modal()
+            },
+            // 생성
+            create(name) {
+                alert(name)
             }
         }
     }
