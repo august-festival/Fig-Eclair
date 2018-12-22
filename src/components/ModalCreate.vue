@@ -26,8 +26,8 @@
         methods: {
             add() {
                 this.$emit('add', this.name)
-                this.name = ''
                 $('#modal_create_workspace').modal('hide')
+                this.name = ''
             }
         }
     }

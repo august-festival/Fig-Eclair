@@ -33,27 +33,33 @@
                 list: [
                     {
                         title: '테스트1',
-                        content: '내용1'
+                        content: '내용1',
+                        href: '/board/1'
                     },
                     {
                         title: '테스트2',
-                        content: '내용2'
+                        content: '내용2',
+                        href: '/board/2'
                     },
                     {
                         title: '테스트3',
-                        content: '내용4'
+                        content: '내용4',
+                        href: '/board/3'
                     },
                     {
                         title: '테스트5',
-                        content: '내용5'
+                        content: '내용5',
+                        href: '/board/4'
                     },
                     {
                         title: '테스트6',
-                        content: '내용7'
+                        content: '내용7',
+                        href: '/board/5'
                     },
                     {
                         title: '테스트8',
-                        content: '내용9'
+                        content: '내용9',
+                        href: '/board/6'
                     }
                 ]
             }

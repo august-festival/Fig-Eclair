@@ -1,9 +1,10 @@
 <template lang="pug">
     #box_card
         .card(class="text-white bg-dark mb-3" v-for="vo of list")
-            .card-header header
+            .card-header
+                router-link(v-if="vo.href !== undefined" :to="vo.href") {{ vo.title }}
+                span(v-else="vo.href === undefined") {{ vo.title }}
             .card-body
-                h5.card-title {{ vo.title }}
                 p.card-text {{ vo.content }}
 </template>
 
