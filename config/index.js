@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://192.168.200.100:3000/api',
+        target: 'http://e340cc50.ngrok.io/api',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
