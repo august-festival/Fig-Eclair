@@ -6,7 +6,7 @@
                     h5.modal-title {{ title }}
                     button.close(type="button" data-dismiss="modal" aria-label="Close")
                 .modal-body
-                    input(type="text" v-model="name")
+                    input(class="form-control" type="text" v-model="name" placeholder="명칭")
                 .modal-footer
                     button(type="button" class="btn btn-secondary" data-dismiss="modal") Close
                     button(type="button" class="btn btn-primary" @click="add") add

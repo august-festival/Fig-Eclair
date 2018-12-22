@@ -1,6 +1,6 @@
 <template lang="pug">
     #menu_sub(class="btn-group" role="group")
-        button(class="btn btn-dark" v-for="menu of menus" @click="newBtn(menu)") {{ menu }}
+        button(class="btn btn-dark" v-for="(menu, index) of menus" :class="active === index ? 'on' : ''" @click="newBtn(menu)") {{ menu }}
 </template>
 
 <script>
@@ -12,6 +12,10 @@
                 default: () => {
                     return [];
                 }
+            },
+            active: {
+                type: Number,
+                default: 0
             }
         },
         methods: {
@@ -27,5 +31,11 @@
 <style lang="scss" scoped>
     #menu_sub {
         margin-bottom: 20px;
+
+        .on {
+            color: #fff;
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
     }
 </style>

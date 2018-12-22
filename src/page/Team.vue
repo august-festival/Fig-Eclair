@@ -2,7 +2,7 @@
     #team_workspace
         menu-top(:active="1")
         #content_workspace
-            menu-sub(:menus="subMenus" @new="getModal")
+            menu-sub(:menus="subMenus" :active="0" @new="getModal")
             box-card(:list="list")
 
         modal-create(title="팀 생성" @add="create")
@@ -28,32 +28,7 @@
                     'TEAM',
                     'NEW'
                 ],
-                list: [
-                    {
-                        title: '테스트팀1',
-                        content: '내용1'
-                    },
-                    {
-                        title: '테스트팀2',
-                        content: '내용2'
-                    },
-                    {
-                        title: '테스트팀3',
-                        content: '내용4'
-                    },
-                    {
-                        title: '테스트팀5',
-                        content: '내용5'
-                    },
-                    {
-                        title: '테스트팀6',
-                        content: '내용7'
-                    },
-                    {
-                        title: '테스트팀8',
-                        content: '내용9'
-                    }
-                ]
+                list: []
             }
         },
         methods: {
@@ -63,8 +38,29 @@
             },
             // 생성
             create(name) {
-                alert(name)
+                this.$http.post('/api/v1/teams', {
+                    name: name
+                }).then(res => {
+                    this.getList()
+                })
+            },
+            getList() {
+                // 팀리스트 조회
+                this.$http.get('/api/v1/teams').then(res => {
+                    JSLog('to', res.data)
+                    const list = [];
+                    res.data.forEach(v => {
+                        list.push({
+                            title: v.name,
+                            visibility: v.visibilityType
+                        })
+                    })
+                    this.list = list
+                })
             }
+        },
+        created() {
+            this.getList()
         }
     }
 </script>

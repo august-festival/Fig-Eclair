@@ -4,8 +4,10 @@
             .card-header
                 router-link(v-if="vo.href !== undefined" :to="vo.href") {{ vo.title }}
                 span(v-else="vo.href === undefined") {{ vo.title }}
-            .card-body
+            .card-body(v-if="vo.content !== undefined")
                 p.card-text {{ vo.content }}
+            .card-footer
+                small {{ vo.visibility }}
 </template>
 
 <script>
@@ -27,7 +29,6 @@
         .card {
             display: inline-block;
             width: 200px;
-            height: 200px;
             margin-right: 15px;
             margin-bottom: 20px;
             float: left;

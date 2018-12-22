@@ -13,6 +13,12 @@ library.add(faCoffee)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 // 기본 HTTP 설정
 Vue.prototype.$http = axios
+// 로그인 token 정보 미리 셋팅
+store.commit({
+  type: 'login',
+  token: '6e1a2aa8-8893-4791-91ad-565fe39e548d'
+})
+
 Vue.config.productionTip = false
 
 // 전역 이벤트 버스
