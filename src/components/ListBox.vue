@@ -6,24 +6,10 @@
             </span>
         </div>
         <div class="list-content" ref="content">
-            <div class="card-item">
-                <span class="item">
-                    card1
-                </span>
-            </div>
-            <div class="card-item">
-                <span class="item">
-                    card2
-                </span>
-            </div>
-            <div class="card-item">
-                <span class="item">
-                    card3
-                </span>
-            </div>
+            <card-item v-bind:cards=item></card-item>
         </div>
         <div class="list-footer">
-            <button class="list-add">
+            <button class="list-add" @click="listAdd">
                 카드 추가
             </button>
         </div>
@@ -32,8 +18,21 @@
 </template>
 
 <script>
+    import CardItem from '@/components/CardItem'
+
     export default {
         name: "ListBox",
+        data: function() {
+            return {
+                item : [
+                    {title: 'card1', done: true}, 
+                    {title: 'card2', done: true},
+                    ]
+            }
+        },
+        components: {
+            CardItem
+        },
         methods: {
             styleChangeIn: function(e) {
                 e.target.style.backgroundColor = '#eee';
@@ -43,8 +42,9 @@
                 e.target.blur();
             },
             listAdd: function(){
-                const rootEl = this.$refs.content;                
-                rootEl.appendChild(this.makeChildEl());
+                const count = this.item.length+1;
+                const val = `card${count}`
+                this.item.push({title: val, done: false})
             }
         }
     }
@@ -53,10 +53,11 @@
 <style lang="scss" scoped>
     .listbox{
         margin: 0 10px;
+        padding: 10px 0;
         background-color: #bcbec0;
         border-radius: 3px;
         width: 272px;
-        height: 225px;
+        // height: 225px;
         .list-header{
             padding: 10px;
             color: #000;
@@ -80,8 +81,9 @@
         }
         .list-content{
             margin:0 10px;
+            height: 100%;
             .card-item{
-                height: 100%;
+                // height: 100%;
                 margin-bottom: 10px;
                 padding: 10px;
                 border-radius: 3px;
