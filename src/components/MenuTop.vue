@@ -51,7 +51,7 @@
     #menu_top {
         width: 100%;
         background-color: #424242;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
 
         #menu {
             button {

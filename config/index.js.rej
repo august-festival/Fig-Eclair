@@ -1,0 +1,10 @@
+diff a/config/index.js b/config/index.js	(rejected hunks)
+@@ -12,7 +12,7 @@
+     assetsPublicPath: '/',
+     proxyTable: {
+       '/api': {
+-        target: 'http://192.168.200.100:3000/api',
++        target: 'http://e340cc50.ngrok.io/api',
+         changeOrigin: true,
+         pathRewrite: {
+           '^/api': ''

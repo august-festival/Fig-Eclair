@@ -6,10 +6,11 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCoffee)
+library.add(faTimes)
+library.add(faPlus)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 // 기본 HTTP 설정
 Vue.prototype.$http = axios

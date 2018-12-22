@@ -1,19 +1,22 @@
-<template lang="pug">
-    #board_workspace
-        menu-top(:isMargin="false")
-        header-sub
-        #content_workspace
+<template>
+    <div>
+        <menu-top></menu-top>
+        <header-sub></header-sub>
+        <item-box></item-box>
+    </div>
 </template>
 
 <script>
     import MenuTop from '@/components/MenuTop'
     import HeaderSub from '@/components/HeaderSub'
+    import ItemBox from '@/components/ItemBox'
 
     export default {
         name: "Board",
         components: {
             MenuTop,
-            HeaderSub
+            HeaderSub,
+            ItemBox
         }
     }
 </script>
