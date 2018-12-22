@@ -5,6 +5,7 @@ import Team from '@/page/Team'
 import Setting from '@/page/Setting'
 import Login from '@/page/Login'
 import Error from '@/page/Error'
+import Board from '@/page/Board'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/setting',
       name: 'Setting',
       component: Setting
+    },
+    {
+      path: '/board/:id',
+      name: 'Board',
+      component: Board
     },
     {
       path: '/login',
